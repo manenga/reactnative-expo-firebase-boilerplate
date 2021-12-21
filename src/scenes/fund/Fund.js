@@ -15,8 +15,8 @@ export default function Fund(props) {
   const [token, setToken] = useState('')
   const scheme = useColorScheme()
 
-  const goToAddFunds = () => {
-    props.navigation.navigate('AddFunds', { userData: userData })
+  const goToAmountScreen = () => {
+    props.navigation.navigate('Amount', { userData: userData })
   }
 
   useEffect(() => {
@@ -46,7 +46,7 @@ export default function Fund(props) {
           <Text style={scheme === 'dark' ? styles.darktext : styles.text}>Funding methods</Text>
           {providers.map((item: Partial<List2Data>, i: React.Key) => (
             <View style={{ marginVertical: 4 }}>
-              <ListItem key={i} bottomDivider>
+              <ListItem key={i} bottomDivider onPress={goToAmountScreen}>
                 <Icon name={item.icon} type="font-awesome" color={item.color} />
                 <ListItem.Content>
                   <ListItem.Title style={{ color: 'black'}}>
