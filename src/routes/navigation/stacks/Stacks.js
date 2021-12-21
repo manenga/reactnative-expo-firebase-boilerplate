@@ -4,6 +4,7 @@ import Login from '../../../scenes/login'
 import Registration from '../../../scenes/registration'
 import Home from '../../../scenes/home'
 import Profile from '../../../scenes/profile'
+import Wallet from '../../../scenes/wallet'
 import Detail from '../../../scenes/details'
 
 // ------------------------------------
@@ -40,6 +41,18 @@ export const HomeNavigator = (props) => {
     <Stack.Navigator headerMode="screen" screenOptions={navigationProps}>
       <Stack.Screen name="Home">
         {props => <Home {...props} extraData={user} />}
+      </Stack.Screen>
+    </Stack.Navigator>
+  )
+}
+
+export const WalletNavigator = (props) => {
+  const user = props.user
+  const navigationProps = props.navigationProps
+  return (
+    <Stack.Navigator headerMode="screen" screenOptions={navigationProps}>
+      <Stack.Screen name="Wallet">
+        {props => <Wallet {...props} extraData={user} />}
       </Stack.Screen>
     </Stack.Navigator>
   )

@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "reactnative-expo-firebase-boilerplate",
-    "slug": "reactnative-expo-firebase-boilerplate",
+    "name": "Transpo App",
+    "slug": "transpo-app",
     "privacy": "public",
     "platforms": [
       "ios",

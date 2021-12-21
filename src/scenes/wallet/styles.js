@@ -7,13 +7,28 @@ export default StyleSheet.create({
     justifyContent: 'center',
   },
   title: {
-    fontSize: 24,
+    fontSize: 36,
     marginTop: 5,
     marginBottom: 5,
     marginLeft: 10,
     textAlign: 'center',
   },
   darktitle: {
+    fontSize: 36,
+    marginTop: 5,
+    marginBottom: 5,
+    marginLeft: 10,
+    textAlign: 'center',
+    color: 'white',
+  },
+  title2: {
+    fontSize: 24,
+    marginTop: 5,
+    marginBottom: 5,
+    marginLeft: 10,
+    textAlign: 'center',
+  },
+  darktitle2: {
     fontSize: 24,
     marginTop: 5,
     marginBottom: 5,
@@ -37,5 +52,6 @@ export default StyleSheet.create({
   main: {
     flex: 1,
     width: '100%',
+    paddingTop: 20,
   },
 })

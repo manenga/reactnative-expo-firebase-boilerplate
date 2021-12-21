@@ -5,13 +5,13 @@ import FontIcon from 'react-native-vector-icons/FontAwesome5'
 import { colors } from 'theme'
 
 // stack navigators
-import { HomeNavigator, ProfileNavigator } from '../stacks'
+import { HomeNavigator, ProfileNavigator, WalletNavigator } from '../stacks'
 
 const Tab = createBottomTabNavigator()
 
 const TabNavigator = (props) => {
-  const user = props.user
-  const navigationProps = props.navigationProps
+  const { user } = props
+  const { navigationProps } = props
   return (
     <Tab.Navigator
       screenOptions={({ route }) => ({
@@ -26,15 +26,24 @@ const TabNavigator = (props) => {
                   solid
                 />
               )
+            case 'Wallet':
+              return (
+                <FontIcon
+                  name="wallet"
+                  color={focused ? colors.lightPurple : colors.gray}
+                  size={20}
+                  solid
+                />
+              )
             case 'Profile':
-            return (
-              <FontIcon
-                name="user"
-                color={focused ? colors.lightPurple : colors.gray}
-                size={20}
-                solid
-              />
-            )
+              return (
+                <FontIcon
+                  name="user"
+                  color={focused ? colors.lightPurple : colors.gray}
+                  size={20}
+                  solid
+                />
+              )
             default:
               return <View />
           }
@@ -48,12 +57,16 @@ const TabNavigator = (props) => {
       swipeEnabled={false}
     >
       <Tab.Screen
-        name="Home" 
-        children={()=> <HomeNavigator user={user} navigationProps={navigationProps}/>}
+        name="Home"
+        children={() => <HomeNavigator user={user} navigationProps={navigationProps} />}
+      />
+      <Tab.Screen
+        name="Wallet"
+        children={() => <WalletNavigator user={user} navigationProps={navigationProps} />}
       />
       <Tab.Screen
         name="Profile"
-        children={()=> <ProfileNavigator user={user} navigationProps={navigationProps}/>}
+        children={() => <ProfileNavigator user={user} navigationProps={navigationProps} />}
       />
     </Tab.Navigator>
   )
