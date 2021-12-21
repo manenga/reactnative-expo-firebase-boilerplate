@@ -10,7 +10,7 @@ import {
 import styles from './styles'
 import { firebase } from '../../firebase/config'
 
-export default function Wallet(props) {
+export default function Fund(props) {
   const userData = props.extraData
   const [token, setToken] = useState('')
   const scheme = useColorScheme()
