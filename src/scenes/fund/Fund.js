@@ -47,9 +47,9 @@ export default function Fund(props) {
           {providers.map((item: Partial<List2Data>, i: React.Key) => (
             <View style={{ marginVertical: 4 }}>
               <ListItem key={i} bottomDivider>
-                <Icon name="money" type="font-awesome" color="red" />
+                <Icon name={item.icon} type="font-awesome" color={item.color} />
                 <ListItem.Content>
-                  <ListItem.Title style={{ color: 'red' }}>
+                  <ListItem.Title style={{ color: 'black'}}>
                     {item.merchent}
                   </ListItem.Title>
                   <ListItem.Subtitle>{item.limits}</ListItem.Subtitle>
@@ -71,7 +71,8 @@ export default function Fund(props) {
 const providers: Partial<List2Data>[] = [
   {
     limits: '50 ZMW - 1000 ZMW',
-    avatar_url: 'https://uifaces.co/our-content/donated/XdLjsJX_.jpg',
+    icon: 'mobile',
+    color: 'red',
     merchent: 'Mobile Money (Airtel)',
     fee: '3%',
     speed: '1 hour',
@@ -79,7 +80,8 @@ const providers: Partial<List2Data>[] = [
   },
   {
     limits: '25 ZMW - 10000 ZMW',
-    avatar_url: 'https://randomuser.me/api/portraits/women/48.jpg',
+    icon: 'mobile',
+    color: 'orange',
     merchent: 'Mobile Money (MTN)',
     fee: '3%',
     speed: '1 hour',
@@ -87,8 +89,8 @@ const providers: Partial<List2Data>[] = [
   },
   {
     limits: '25 ZMW - 10000 ZMW',
-    avatar_url:
-      'https://images.unsplash.com/photo-1498529605908-f357a9af7bf5?ixlib=rb-0.3.5&q=80&fm=jpg&crop=faces&fit=crop&h=200&w=200&s=047fade70e80ebb22ac8f09c04872c40',
+    icon: 'credit-card',
+    color: 'black',
     merchent: 'Bank Card',
     fee: '3%',
     speed: '3 hours',
@@ -96,10 +98,19 @@ const providers: Partial<List2Data>[] = [
   },
   {
     limits: '25 ZMW - 10000 ZMW',
-    avatar_url:
-      'https://images-na.ssl-images-amazon.com/images/M/MV5BMTQwMDQ0NDk1OV5BMl5BanBnXkFtZTcwNDcxOTExNg@@._V1_UY256_CR2,0,172,256_AL_.jpg',
+    icon: 'bank',
+    color: 'black',
     merchent: 'Bank Transfer',
     fee: '3%',
+    speed: '2 days',
+    linearGradientColors: ['#F44336', '#E91E63'],
+  },
+  {
+    limits: '25 ZMW - 10000 ZMW',
+    icon: 'paypal',
+    color: 'blue',
+    merchent: 'PayPal',
+    fee: '2%',
     speed: '2 days',
     linearGradientColors: ['#F44336', '#E91E63'],
   },
