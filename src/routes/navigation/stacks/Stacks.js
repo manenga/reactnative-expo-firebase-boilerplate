@@ -6,6 +6,7 @@ import Home from '../../../scenes/home'
 import Profile from '../../../scenes/profile'
 import Wallet from '../../../scenes/wallet'
 import Detail from '../../../scenes/details'
+import Fund from '../../../scenes/fund'
 
 // ------------------------------------
 // Constants
@@ -53,6 +54,9 @@ export const WalletNavigator = (props) => {
     <Stack.Navigator headerMode="screen" screenOptions={navigationProps}>
       <Stack.Screen name="Wallet">
         {props => <Wallet {...props} extraData={user} />}
+      </Stack.Screen>
+      <Stack.Screen name="Fund">
+        {props => <Fund {...props} extraData={user} />}
       </Stack.Screen>
     </Stack.Navigator>
   )

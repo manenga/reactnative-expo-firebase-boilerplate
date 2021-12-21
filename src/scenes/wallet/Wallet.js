@@ -16,7 +16,7 @@ export default function Wallet(props) {
   const scheme = useColorScheme()
 
   const goToAddFunds = () => {
-    props.navigation.navigate('AddFunds', { userData: userData })
+    props.navigation.navigate('Fund', { userData: userData })
   }
 
   useEffect(() => {
